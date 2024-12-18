@@ -1,51 +1,64 @@
 <!DOCTYPE html>
-<html lang="" en>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survery Form</title>
     <link rel="stylesheet" href="style.css" />
-    <title>survery form</title>
   </head>
   <body>
+    <!--Page Title-->
     <h1 id="title">CodeCamp for All</h1>
-    <p id="description">Your feedback is partly what keeps us going!</p>
-    <form id="survey-form">
+    <!--Short Explanation-->
+    <p id="description">
+      We value your feedback! Please fill out the survey below.
+    </p>
+    <!--Form-->
+    <form id="survey-form" action="">
+      <!--Personal Information-->
       <fieldset>
-        <label for="name"
-          ><input id="name" type="text" placeholder="Enter your name"
+        <label id="name-label" for="name"
+          >Fullname:<input
+            id="name"
+            type="text"
+            placeholder="Enter your fullname"
+            required
         /></label>
-        <label for="email"
-          ><input
+        <label id="email-label" for="email"
+          >Email:<input
             id="email"
             type="email"
             placeholder="Enter your email address"
+            required
         /></label>
-        <label for="number"
-          ><input
+        <label id="number-label" for="number"
+          >Age:<input
             id="number"
             type="number"
-            placeholder="Enter your phone number"
+            min="10"
+            max="100"
+            placeholder="Enter your age"
         /></label>
       </fieldset>
+      <!-- Career Interest -->
       <fieldset>
-        Would you be available to join us Friday 13th?
-        <label><input type="radio" checked />Absolutely</label>
-        <label><input type="radio" />Not a chance</label>
-        <label><input type="radio" />Maybe ...</label>
+        Would you be looking to start a career in tech?
+        <label
+          ><input
+            type="radio"
+            name="career"
+            value="absolutely"
+          />Absolutely</label
+        >
+        <label
+          ><input type="radio" name="career" value="not-a-chance" />Not a
+          chance</label
+        >
+        <label
+          ><input type="radio" name="career" value="maybe" />Maybe ...</label
+        >
       </fieldset>
-      <fieldset>
-        <label>
-          How did you hear about us?
-          <select id="dropdown">
-            <option value="">Select one from below</option>
-            <option value="1">Instagram</option>
-            <option value="2">Twitter</option>
-            <option value="3">Facebook</option>
-            <option value="4">TikTok</option>
-            <option value="4">Other</option>
-          </select>
-        </label>
-      </fieldset>
+      <!-- Coding Languages -->
       <fieldset>
         What coding languages are you interested in?
         <label
@@ -67,12 +80,33 @@
           ><input type="checkbox" name="language" value="ruby" />Ruby</label
         >
         <label><input type="checkbox" name="language" value="go" />Go</label>
+      </fieldset>
+      <!-- Referral and Comments -->
+      <fieldset>
+        <label for="dropdown">
+          How did you hear about us?
+          <select id="dropdown" required>
+            <option value="" disabled selected>Select one from below</option>
+            <option value="instagram">Instagram</option>
+            <option value="twitter">Twitter</option>
+            <option value="facebook">Facebook</option>
+            <option value="tiktok">TikTok</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+
         <label for="comments">
           Additional Comments:
-          <textarea id="comments" rows="3" cols="30"></textarea>
+          <textarea
+            id="comments"
+            rows="3"
+            cols="30"
+            placeholder="Share your thoughts here"
+          ></textarea>
         </label>
       </fieldset>
-      <input type="submit" value="Submit" />
+      <!--Submit button-->
+      <input id="submit" type="submit" value="Submit" />
     </form>
   </body>
 </html>
